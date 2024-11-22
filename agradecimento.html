@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Contribuição.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes">
+    <title>Acessibilidade</title>
+</head>
+<body>
+    <nav id="menu"> 
+        <ul> 
+          <li><a href="../HTML/Home.html">HOME</a></li>
+          <li><a href="../HTML/Desafios.html">Desafios e Barreiras</a></li>
+          <li><a href="../HTML/Soluções.html">Soluções e inovações</a></li>
+          <li><a href="../HTML/Direitos.html">Direitos e Legislação</a></li>
+          <li><a href="../HTML/Contribuição.html">Como contribuir</a></li>
+        </ul> 
+      </nav>
+</body>
+<script>
+  let zoomLevel = 1;
+  
+  function zoomIn() {
+      zoomLevel += 0.1;
+      document.body.style.transform = 'scale(' + zoomLevel + ')';
+      document.body.style.transformOrigin = '0 0';
+  }
+
+  function zoomOut() {
+      zoomLevel -= 0.1;
+      document.body.style.transform = 'scale(' + zoomLevel + ')';
+      document.body.style.transformOrigin = '0 0';
+  }
+  document.getElementById("readButton").addEventListener("click", function() {
+  let selectedText = window.getSelection().toString();
+  
+  if (selectedText) {
+      let speech = new SpeechSynthesisUtterance(selectedText);
+      speech.lang = 'pt-BR';
+      window.speechSynthesis.speak(speech);
+  } else {
+      alert("Por favor, selecione um texto para ouvir!");
+  }
+});
+</script>
+<main>
+    <h1>Obrigado por Entrar em Contato!</h1>
+    <p>Agradecemos sua mensagem. Em breve, entraremos em contato.</p>
+    <a href="Home.html" class="button">Voltar à Página Inicial</a>
+</main>
+<div id="zoom-container">
+  <button onclick="zoomIn()">A+</button>
+  <button onclick="zoomOut()">A-</button>
+  <button id="readButton">Ouvir texto selecionado</button>
+</div>
+<body>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>

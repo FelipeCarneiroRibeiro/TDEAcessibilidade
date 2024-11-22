@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Contribuição.css">
+    <meta name="viewport" content="width=device-width, maximum-scale=3, user-scalable=yes">
+    <title>Acessibilidade</title>
+</head>
+<body>
+    <nav id="menu"> 
+        <ul> 
+          <li><a href="../HTML/Home.html">HOME</a></li>
+          <li><a href="../HTML/Desafios.html">Desafios e Barreiras</a></li>
+          <li><a href="../HTML/Soluções.html">Soluções e inovações</a></li>
+          <li><a href="../HTML/Direitos.html">Direitos e Legislação</a></li>
+          <li><a href="../HTML/Contribuição.html">Como contribuir</a></li>
+        </ul> 
+    </nav>
+</body>
+<header>
+    <h1>Bem-vindo à Acessibilidade</h1>
+    <nav>
+        <ul>
+            <li><a href="#praticas">Dicas para Adotar Práticas Inclusivas</a></li>
+            <li><a href="#recursos">Recursos Educacionais</a></li>
+            <li><a href="#apoiar">Como Apoiar e Voluntariar-se</a></li>
+            <li><a href="#formulario">Formulário de Contato</a></li>
+            <li><a href="#iniciativas">Iniciativas de Suporte à Acessibilidade</a></li>
+        </ul>
+    </nav>
+</header>
+<div id="zoom-container">
+    <button onclick="zoomIn()">A+</button>
+    <button onclick="zoomOut()">A-</button>
+    <button id="readButton">Ouvir texto selecionado</button>
+</div>
+<script>
+    let zoomLevel = 1;
+    function zoomIn() {
+        zoomLevel += 0.1;
+        document.body.style.transform = 'scale(' + zoomLevel + ')';
+        document.body.style.transformOrigin = '0 0';
+    }
+
+    function zoomOut() {
+        zoomLevel -= 0.1;
+        document.body.style.transform = 'scale(' + zoomLevel + ')';
+        document.body.style.transformOrigin = '0 0';
+    }
+    document.getElementById("readButton").addEventListener("click", function() {
+        let selectedText = window.getSelection().toString();
+        if (selectedText) {
+            let speech = new SpeechSynthesisUtterance(selectedText);
+            speech.lang = 'pt-BR';
+            window.speechSynthesis.speak(speech);
+        } else {
+            alert("Por favor, selecione um texto para ouvir!");
+        }
+    });
+</script>
+<main>
+    <h1>Como Contribuir</h1>
+    <section id="praticas">
+        <h2>Dicas para Adotar Práticas Inclusivas</h2>
+        <ul>
+            <li><strong>Indivíduos:</strong> Pratique empatia, aprenda Libras, ofereça ajuda respeitosa quando necessário e denuncie barreiras de acessibilidade.</li>
+            <li><strong>Empresas:</strong> Crie rampas de acesso, ofereça treinamento sobre inclusão para colaboradores e implemente tecnologias assistivas nos processos internos.</li>
+            <li><strong>Espaços Públicos:</strong> Instale sinalização tátil, corrimãos e assentos prioritários adequados. Garanta acessibilidade digital nos sites institucionais.</li>
+            <li><strong>Eventos:</strong> Promova feiras de inclusão para apresentar soluções acessíveis e conscientizar sobre a importância da inclusão.</li>
+        </ul>
+    </section>
+
+    <section id="recursos">
+        <h2>Recursos Educacionais</h2>
+        <p>Aprender sobre acessibilidade é essencial para promover a inclusão. Confira algumas sugestões:</p>
+        <ul>
+            <li>Participe de cursos online gratuitos sobre acessibilidade, como os disponíveis em plataformas como <a href="https://www.coursera.org" target="_blank">Coursera</a> ou <a href="https://edx.org" target="_blank">edX</a>.</li>
+            <li>Leia materiais educativos, como o manual de boas práticas de acessibilidade digital da <a href="https://www.w3.org/WAI/" target="_blank">W3C</a>.</li>
+            <li>Assista a documentários que abordem a temática da inclusão e acessibilidade, como *Crip Camp: Revolução pela Inclusão*.</li>
+            <li>Explore o portal <a href="https://emag.governoeletronico.gov.br/" target="_blank">eMAG</a> para acessar diretrizes específicas sobre acessibilidade digital em sites governamentais.</li>
+        </ul>
+    </section>
+
+    <section id="apoiar">
+        <h2>Como Apoiar e Voluntariar-se</h2>
+        <p>Acessibilidade é um esforço coletivo. Aqui estão formas de ajudar:</p>
+        <ul>
+            <li>Trabalhe como voluntário em ONGs que promovem a inclusão, como a <strong>Associação de Assistência à Criança Deficiente (AACD)</strong>.</li>
+            <li>Apoie financeiramente organizações que desenvolvem tecnologias assistivas ou oferecem suporte para pessoas com deficiência.</li>
+            <li>Organize eventos locais, como mutirões para construir rampas ou revisar acessibilidade digital em sites de pequenas empresas.</li>
+            <li>Participe de campanhas de conscientização em escolas e comunidades sobre a importância da inclusão.</li>
+        </ul>
+    </section>
+
+    <section id="iniciativas">
+        <h2>Iniciativas de Suporte à Acessibilidade</h2>
+        <ul>
+            <li><strong>VLibras:</strong> Ferramenta gratuita de tradução para Libras, promovida pelo governo federal.</li>
+            <li><strong>Projeto "Viver Sem Limites":</strong> Um programa governamental que busca garantir direitos e acessibilidade em diferentes áreas, como transporte, saúde e educação.</li>
+            <li><strong>Parceria Público-Privada:</strong> Empresas e governos colaboram para desenvolver tecnologias assistivas, como aplicativos de mobilidade e sinalização acessível.</li>
+        </ul>
+    </section>
+
+    <section id="formulario">
+        <h2>Formulário de Contato</h2>
+        <p>Envie sugestões, relatos ou perguntas. Queremos ouvir você!</p>
+        <form action="agradecimento.html" method="get">
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome" required><br><br>
+        
+            <label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+        
+            <label for="mensagem">Mensagem:</label><br>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea><br><br>
+        
+            <button id="enviar" type="submit">Enviar</button>
+            <script>
+                document.getElementById("enviar").addEventListener("click", function(event) {
+                    event.preventDefault();
+                    window.location.href = "agradecimento.html";
+                });
+            </script>
+            
+        </form>
+    </section>
+</main>
+<footer>
+    <p>Todos os direitos reservados. Desenvolvido por Felipe Carneiro Ribeiro</p>
+</footer>
+</html>
+
+
+<body>
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>

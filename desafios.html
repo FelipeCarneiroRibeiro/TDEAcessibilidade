@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Desafios.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes">
+    <title>Acessibilidade</title>
+</head>
+<body>
+    <nav id="menu"> 
+        <ul> 
+          <li><a href="../HTML/Home.html">HOME</a></li>
+          <li><a href="../HTML/Desafios.html">Desafios e Barreiras</a></li>
+          <li><a href="../HTML/Soluções.html">Soluções e inovações</a></li>
+          <li><a href="../HTML/Direitos.html">Direitos e Legislação</a></li>
+          <li><a href="../HTML/Contribuição.html">Como contribuir</a></li>
+        </ul> 
+      </nav>
+</body>
+<header>
+    <h1>Bem-vindo à Acessibilidade</h1>
+    <nav>
+        <ul>
+            <li><a href="#introducao">Introdução</a></li>
+            <li><a href="#barreiras-cotidianas">Principais Barreiras na Vida Cotidiana</a></li>
+            <li><a href="#exemplos-reais">Exemplos Reais</a></li>
+            <li><a href="#dados-impactantes">Dados Impactantes</a></li>
+            <li><a href="#desafios-digitais">Desafios Digitais</a></li>
+            <li><a href="#recursos-tecnologicos">Recursos Tecnológicos</a></li>
+            <li><a href="#conclusao">Conclusão</a></li>
+            <li><a href="#referencias">Referências</a></li>
+        </ul>
+    </nav>
+</header>
+<div id="zoom-container">
+    <button onclick="zoomIn()">A+</button>
+    <button onclick="zoomOut()">A-</button>
+    <button id="readButton">Ouvir texto selecionado</button>
+</div>
+<script>
+    let zoomLevel = 1;
+    function zoomIn() {
+        zoomLevel += 0.1;
+        document.body.style.transform = 'scale(' + zoomLevel + ')';
+        document.body.style.transformOrigin = '0 0';
+    }
+
+    function zoomOut() {
+        zoomLevel -= 0.1;
+        document.body.style.transform = 'scale(' + zoomLevel + ')';
+        document.body.style.transformOrigin = '0 0';
+    }
+    document.getElementById("readButton").addEventListener("click", function() {
+        let selectedText = window.getSelection().toString();
+        if (selectedText) {
+            let speech = new SpeechSynthesisUtterance(selectedText);
+            speech.lang = 'pt-BR';
+            window.speechSynthesis.speak(speech);
+        } else {
+            alert("Por favor, selecione um texto para ouvir!");
+        }
+    });
+</script>
+<main>
+    <h1>Desafios e Barreiras</h1>
+    
+    <section id="introduçao">
+        <h2>Introdução</h2>
+        <p>
+            A inclusão de pessoas com deficiência na sociedade é um desafio que envolve diversas barreiras. 
+            Estas barreiras podem ser físicas, digitais, sociais e educacionais, e impactam a qualidade de vida e a participação ativa dessas pessoas em diferentes contextos.
+            Este documento visa destacar essas barreiras, exemplos reais de como elas se manifestam e dados que evidenciam a necessidade urgente de uma sociedade mais inclusiva.
+        </p>
+    </section>
+
+    <section id="barreiras-cotidianas">
+        <h2>Principais Barreiras na Vida Cotidiana</h2>
+        <ul>
+            <li><strong>Física:</strong> Escadas sem rampas ou elevadores, calçadas irregulares e falta de transporte adaptado.</li>
+            <li><strong>Digital:</strong> Sites e aplicativos que não funcionam com leitores de tela ou não possuem legendas para vídeos.</li>
+            <li><strong>Social:</strong> Preconceito ou falta de conscientização sobre como ajudar pessoas com deficiência.</li>
+            <li><strong>Educacional:</strong> Escolas sem recursos inclusivos, como materiais em braille ou intérpretes de Libras.</li>
+        </ul>
+    </section>
+
+    <section id="exemplos-reais">
+        <h2>Exemplos Reais</h2>
+        <ul>
+            <li><strong>Na mobilidade urbana:</strong> Ônibus sem elevadores ou assentos reservados inadequados.</li>
+            <li><strong>No trabalho:</strong> Empresas que não oferecem ajustes para colaboradores com deficiência, como mesas ajustáveis ou tecnologias assistivas.</li>
+            <li><strong>Na educação:</strong> Falta de adaptações curriculares e de apoio pedagógico para alunos com deficiência.</li>
+            <li><strong>Na cultura:</strong> Teatros e cinemas que não oferecem acessibilidade, como legendas ou audiodescrição.</li>
+        </ul>
+    </section>
+
+    <section id="dados-impactantes">
+        <h2>Dados Impactantes</h2>
+        <p>15% da população mundial possui algum tipo de deficiência (OMS).</p>
+        <p>No Brasil, 23,9% da população têm algum grau de deficiência (IBGE, 2010).</p>
+        <p>Estudos mostram que a inclusão de pessoas com deficiência no mercado de trabalho pode aumentar a produtividade e a diversidade nas empresas.</p>
+    </section>
+
+    <section id="desafios-digitais">
+        <h2>Desafios Digitais</h2>
+        <p>Barreiras digitais incluem:</p>
+        <ul>
+            <li>Falta de contraste adequado em sites, dificultando a leitura para pessoas com baixa visão ou daltonismo.</li>
+            <li>Ausência de descrições textuais para imagens e elementos visuais importantes.</li>
+            <li>Formulários que não possuem sequência lógica ou rótulos adequados.</li>
+        </ul>
+    </section>
+
+    <section id="recursos-tecnologicos">
+        <h2>Recursos Tecnológicos</h2>
+        <p>Ferramentas que auxiliam a acessibilidade incluem:</p>
+        <ul>
+            <li><strong>Leitores de tela:</strong> Transformam texto em áudio, permitindo navegação por pessoas cegas.</li>
+            <li><strong>Ampliadores de tela:</strong> Facilita a visualização para pessoas com baixa visão.</li>
+            <li><strong>Teclados e mouses adaptados:</strong> Projetados para atender às necessidades de pessoas com mobilidade reduzida.</li>
+        </ul>
+    </section>
+
+    <section id="conclusao">
+        <h2>Conclusão</h2>
+        <p>
+            Para promover uma sociedade mais inclusiva, é fundamental que todos nós nos tornemos agentes de mudança. 
+            Isso envolve não apenas a eliminação das barreiras físicas e digitais, mas também a promoção de uma cultura de respeito e compreensão. 
+            Juntos, podemos construir um futuro onde todos tenham a oportunidade de participar plenamente da vida social, educacional e profissional.
+        </p>
+    </section>
+
+    <section id="referencias">
+        <h2>Referências</h2>
+        <ul>
+            <li>Organização Mundial da Saúde (OMS)</li>
+            <li>Instituto Brasileiro de Geografia e Estatística (IBGE)</li>
+            <li>eMAG - Modelo de Acessibilidade em Governo Eletrônico</li>
+        </ul>
+    </section>
+</main>
+</body>
+<footer>
+    <p>Todos os direitos reservados. Desenvolvido por Felipe Carneiro Ribeiro</p>
+</footer>
+</html>
+
+<body>
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+  </body>

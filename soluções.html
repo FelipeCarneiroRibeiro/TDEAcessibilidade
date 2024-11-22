@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Soluções.css">
+    <meta name="viewport" content="width=device-width, maximum-scale=3, user-scalable=yes">
+    <title>Acessibilidade</title>
+</head>
+<body>
+    <nav id="menu"> 
+        <ul> 
+          <li><a href="../HTML/Home.html">HOME</a></li>
+          <li><a href="../HTML/Desafios.html">Desafios e Barreiras</a></li>
+          <li><a href="../HTML/Soluções.html">Soluções e inovações</a></li>
+          <li><a href="../HTML/Direitos.html">Direitos e Legislação</a></li>
+          <li><a href="../HTML/Contribuição.html">Como contribuir</a></li>
+        </ul> 
+    </nav>
+</body>
+<header>
+    <h1>Bem-vindo à Acessibilidade</h1>
+    <nav>
+        <ul>
+            <li><a href="#tecnologias">Tecnologias Assistivas</a></li>
+            <li><a href="#praticas">Práticas Inclusivas</a></li>
+            <li><a href="#casos">Casos de Sucesso</a></li>
+            <li><a href="#novas-inovacoes">Novas Inovações</a></li>
+            <li><a href="#legislacao-relevante">Legislação Relevante</a></li>
+        </ul>
+    </nav>
+</header>
+<div id="zoom-container">
+    <button onclick="zoomIn()">A+</button>
+    <button onclick="zoomOut()">A-</button>
+    <button id="readButton">Ouvir texto selecionado</button>
+</div>
+<script>
+    let zoomLevel = 1;
+    function zoomIn() {
+        zoomLevel += 0.1;
+        document.body.style.transform = 'scale(' + zoomLevel + ')';
+        document.body.style.transformOrigin = '0 0';
+    }
+
+    function zoomOut() {
+        zoomLevel -= 0.1;
+        document.body.style.transform = 'scale(' + zoomLevel + ')';
+        document.body.style.transformOrigin = '0 0';
+    }
+    document.getElementById("readButton").addEventListener("click", function() {
+        let selectedText = window.getSelection().toString();
+        if (selectedText) {
+            let speech = new SpeechSynthesisUtterance(selectedText);
+            speech.lang = 'pt-BR';
+            window.speechSynthesis.speak(speech);
+        } else {
+            alert("Por favor, selecione um texto para ouvir!");
+        }
+    });
+</script>
+<main>
+    <h1>Soluções e Inovação</h1>
+    <section id="tecnologias">
+        <h2>Tecnologias Assistivas</h2>
+        <ul>
+            <li><strong>Leitores de Tela:</strong> Softwares como NVDA ou VoiceOver ajudam pessoas com deficiência visual a navegar em dispositivos digitais.</li>
+            <li><strong>Aparelhos Auditivos Inteligentes:</strong> Dispositivos que se conectam a smartphones para melhor comunicação e ajuste automático ao ambiente.</li>
+            <li><strong>Aplicativos de Mobilidade:</strong> Apps como Google Maps e Wheelmap fornecem rotas acessíveis e localizam lugares adaptados para cadeirantes.</li>
+            <li><strong>Próteses Avançadas:</strong> Membros biônicos controlados por sensores de movimento para maior independência física.</li>
+            <li><strong>Assistentes Virtuais:</strong> Tecnologias como Alexa e Google Assistant ajudam pessoas com mobilidade reduzida a controlar dispositivos domésticos.</li>
+            <li><strong>Ampliadores de Tela:</strong> Programas que ampliam o conteúdo digital para auxiliar pessoas com baixa visão.</li>
+        </ul>
+    </section>
+
+    <section id="praticas">
+        <h2>Práticas Inclusivas</h2>
+        <ul>
+            <li><strong>Ambientes Físicos:</strong> Rampas, corrimãos, sinalização tátil e elevadores adaptados.</li>
+            <li><strong>Conteúdo Digital:</strong> Uso de contraste adequado, legendas para vídeos e descrição em áudio de imagens.</li>
+            <li><strong>Educação Inclusiva:</strong> Disponibilização de intérpretes de Libras e materiais didáticos acessíveis, como braille e audiobooks.</li>
+            <li><strong>Empresas:</strong> Políticas de inclusão no trabalho, treinamentos de conscientização e ajustes razoáveis para pessoas com deficiência.</li>
+            <li><strong>Acessibilidade Web:</strong> Aplicação de normas do eMAG e WCAG para desenvolver sites acessíveis a todos.</li>
+        </ul>
+    </section>
+
+    <section id="casos">
+        <h2>Casos de Sucesso</h2>
+        <ul>
+            <li><strong>Exemplo 1:</strong> Uma rede de supermercados que adaptou prateleiras, carrinhos de compra e corredores para cadeirantes.</li>
+            <li><strong>Exemplo 2:</strong> Empresas que treinam atendentes para o uso básico de Libras e oferecem suporte especializado.</li>
+            <li><strong>Exemplo 3:</strong> Uma universidade que implementou impressoras 3D para criar materiais acessíveis em sala de aula.</li>
+            <li><strong>Exemplo 4:</strong> Aplicativos de caronas que permitem escolher veículos adaptados.</li>
+        </ul>
+    </section>
+
+    <section id="novas-inovacoes">
+        <h2>Novas Inovações</h2>
+        <p>Algumas inovações recentes incluem:</p>
+        <ul>
+            <li><strong>Realidade Virtual e Aumentada:</strong> Utilizadas para criar experiências imersivas que ajudam na reabilitação e treinamento de pessoas com deficiência.</li>
+            <li><strong>Inteligência Artificial:</strong> Sistemas que reconhecem comandos de voz e transcrevem áudio em tempo real.</li>
+            <li><strong>Robôs Assistentes:</strong> Dispositivos projetados para auxiliar em tarefas diárias, como organizar medicamentos ou realizar compras online.</li>
+        </ul>
+    </section>
+
+    <section id="legislacao-relevante">
+        <h2>Legislação Relevante</h2>
+        <ul>
+            <li><a href="http://emag.governoeletronico.gov.br/" target="_blank">eMAG: Modelo de Acessibilidade em Governo Eletrônico</a></li>
+            <li><a href="http://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2015/Lei/L13146.htm" target="_blank">Lei Brasileira de Inclusão (Lei nº 13.146/2015)</a></li>
+            <li><a href="https://www.w3.org/WAI/" target="_blank">WCAG: Web Content Accessibility Guidelines</a></li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <p>Todos os direitos reservados. Desenvolvido por Felipe Carneiro Ribeiro</p>
+</footer>
+</html>
+
+
+<body>
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>

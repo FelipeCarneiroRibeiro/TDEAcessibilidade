@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes">
+    <title>Acessibilidade</title>
+</head>
+<body>
+    <nav id="menu"> 
+        <ul> 
+          <li><a href="../HTML/Home.html">HOME</a></li>
+          <li><a href="../HTML/Desafios.html">Desafios e Barreiras</a></li>
+          <li><a href="../HTML/Soluções.html">Soluções e inovações</a></li>
+          <li><a href="../HTML/Direitos.html">Direitos e Legislação</a></li>
+          <li><a href="../HTML/Contribuição.html">Como contribuir</a></li>
+        </ul> 
+    </nav>
+
+    <header>
+        <h1>Bem-vindo à Acessibilidade</h1>
+        <nav>
+            <ul>
+                <li><a href="#o-que-e">O que é Acessibilidade?</a></li>
+                <li><a href="#objetivo">Objetivo do Site</a></li>
+                <li><a href="#destaques">Destaques</a></li>
+                <li><a href="#importancia">Importância da Acessibilidade</a></li>
+                <li><a href="#estatisticas">Estatísticas</a></li>
+                <li><a href="#tecnologia-assistiva">Tecnologia Assistiva</a></li>
+                <li><a href="#legislacao">Legislação</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="zoom-container">
+        <button onclick="zoomIn()">A+</button>
+        <button onclick="zoomOut()">A-</button>
+        <button id="readButton">Ouvir texto selecionado</button>
+    </div>
+<script>
+    let zoomLevel = 1;
+    function zoomIn() {
+        zoomLevel += 0.1;
+        document.body.style.transform = 'scale(' + zoomLevel + ')';
+        document.body.style.transformOrigin = '0 0';
+    }
+    function zoomOut() {
+        zoomLevel -= 0.1;
+        document.body.style.transform = 'scale(' + zoomLevel + ')';
+        document.body.style.transformOrigin = '0 0';
+    }
+    document.getElementById("readButton").addEventListener("click", function() {
+        let selectedText = window.getSelection().toString();
+        if (selectedText) {
+            let speech = new SpeechSynthesisUtterance(selectedText);
+            speech.lang = 'pt-BR';
+            window.speechSynthesis.speak(speech);
+        } else {
+            alert("Por favor, selecione um texto para ouvir!");
+        }
+    });
+</script>
+
+    <main>
+        <section id="o-que-e">
+            <h2>O que é Acessibilidade?</h2>
+            <p>Acessibilidade é a prática de garantir que todos, independentemente de suas capacidades físicas, sensoriais ou cognitivas, possam participar plenamente das atividades do dia a dia. Isso inclui acesso a espaços públicos, tecnologia, transporte, educação e muito mais.</p>
+        </section>
+
+        <section id="objetivo">
+            <h2>Objetivo do Site</h2>
+            <p>Este site foi criado para promover a conscientização sobre a importância da acessibilidade, compartilhar dicas práticas, destacar inovações e ajudar pessoas e empresas a construir um mundo mais inclusivo. Acreditamos que acessibilidade é um direito, e não um privilégio.</p>
+        </section>
+
+        <section id="destaques">
+            <h2>Destaques</h2>
+            <ul>
+                <li><strong>Histórias Inspiradoras:</strong> Relatos de pessoas que superaram desafios com a ajuda da acessibilidade.</li>
+                <li><strong>Guia Prático:</strong> Dicas simples para adaptar espaços e atitudes.</li>
+                <li><strong>Legislação em Foco:</strong> Leis e direitos que você precisa conhecer.</li>
+            </ul>
+        </section>
+
+        <section id="importancia">
+            <h2>Importância da Acessibilidade</h2>
+            <p>A acessibilidade é fundamental para garantir a inclusão social. Ela permite que pessoas com deficiência tenham acesso a oportunidades iguais em educação, trabalho e lazer, contribuindo para uma sociedade mais justa e equitativa.</p>
+        </section>
+
+        <section id="estatisticas">
+            <h2>Estatísticas</h2>
+            <ul>
+                <li>Mais de 1 bilhão de pessoas no mundo vivem com alguma forma de deficiência.</li>
+                <li>Em média, apenas 10% das pessoas com deficiência têm acesso a serviços de saúde adequados.</li>
+                <li>A acessibilidade pode aumentar a participação de pessoas com deficiência no mercado de trabalho em até 30%.</li>
+                <li>No Brasil, 23,9% da população tem alguma deficiência, segundo o Censo 2010.</li>
+            </ul>
+        </section>
+        <section id="tecnologia-assistiva">
+            <h2>Tecnologia Assistiva</h2>
+            <p>Ferramentas como leitores de tela, ampliadores de tela e teclados adaptados são fundamentais para promover a acessibilidade digital.</p>
+            <ul>
+                <li><strong>Leitores de Tela:</strong> Transformam conteúdo digital em áudio, permitindo navegação para pessoas cegas ou com baixa visão.</li>
+                <li><strong>Ampliadores de Tela:</strong> Aumentam o conteúdo visual para pessoas com baixa visão.</li>
+                <li><strong>Teclados Adaptados:</strong> Projetados para usuários com mobilidade reduzida.</li>
+            </ul>
+        </section>
+
+        <section id="legislacao">
+            <h2>Legislação</h2>
+            <ul>
+                <li><a href="http://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/decreto/d5296.htm" target="_blank">Decreto nº 5.296/2004</a></li>
+                <li><a href="http://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2015/Lei/L13146.htm" target="_blank">Lei Brasileira de Inclusão (Lei nº 13.146/2015)</a></li>
+                <li><a href="http://emag.governoeletronico.gov.br/" target="_blank">Modelo de Acessibilidade eMAG</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Todos os direitos reservados. Desenvolvido por Felipe Carneiro Ribeiro</p>
+    </footer>
+
+    <body>
+        <div vw class="enabled">
+          <div vw-access-button class="active"></div>
+          <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+          </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+          new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+      </body>
+</body>
+</html>

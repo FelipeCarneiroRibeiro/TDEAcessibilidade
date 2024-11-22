@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Direitos.css">
+    <meta name="viewport" content="width=device-width, maximum-scale=3, user-scalable=yes">
+    <title>Acessibilidade</title>
+</head>
+<body>
+    <nav id="menu"> 
+        <ul> 
+          <li><a href="../HTML/Home.html">HOME</a></li>
+          <li><a href="../HTML/Desafios.html">Desafios e Barreiras</a></li>
+          <li><a href="../HTML/Soluções.html">Soluções e inovações</a></li>
+          <li><a href="../HTML/Direitos.html">Direitos e Legislação</a></li>
+          <li><a href="../HTML/Contribuição.html">Como contribuir</a></li>
+        </ul> 
+    </nav>
+</body>
+<header>
+    <h1>Bem-vindo à Acessibilidade</h1>
+    <nav>
+        <ul>
+            <li><a href="#leis">Leis Relacionadas à Acessibilidade</a></li>
+            <li><a href="#direitos-deficiencia">Direitos das Pessoas com Deficiência</a></li>
+            <li><a href="#luta-por-direito">Como Lutar por Seus Direitos</a></li>
+            <li><a href="#recursos">Recursos e Documentos Legais</a></li>
+            <li><a href="#iniciativas">Iniciativas e Programas Governamentais</a></li>
+        </ul>
+    </nav>
+</header>
+<div id="zoom-container">
+    <button onclick="zoomIn()">A+</button>
+    <button onclick="zoomOut()">A-</button>
+    <button id="readButton">Ouvir texto selecionado</button>
+</div>
+<script>
+    let zoomLevel = 1;
+    function zoomIn() {
+        zoomLevel += 0.1;
+        document.body.style.transform = 'scale(' + zoomLevel + ')';
+        document.body.style.transformOrigin = '0 0';
+    }
+
+    function zoomOut() {
+        zoomLevel -= 0.1;
+        document.body.style.transform = 'scale(' + zoomLevel + ')';
+        document.body.style.transformOrigin = '0 0';
+    }
+    document.getElementById("readButton").addEventListener("click", function() {
+        let selectedText = window.getSelection().toString();
+        if (selectedText) {
+            let speech = new SpeechSynthesisUtterance(selectedText);
+            speech.lang = 'pt-BR';
+            window.speechSynthesis.speak(speech);
+        } else {
+            alert("Por favor, selecione um texto para ouvir!");
+        }
+    });
+</script>
+<main>
+    <h1>Direitos e Legislação</h1>
+    <section id="leis">
+        <h2>Leis Relacionadas à Acessibilidade</h2>
+        <ul>
+            <li><strong>Lei Brasileira de Inclusão (LBI):</strong> A Lei nº 13.146/2015 assegura direitos às pessoas com deficiência, promovendo a igualdade de oportunidades e eliminando barreiras.</li>
+            <li><strong>Lei de Cotas (Lei nº 8.213/1991):</strong> Exige que empresas com 100 ou mais empregados reservem vagas para pessoas com deficiência.</li>
+            <li><strong>Norma Técnica NBR 9050:</strong> Estabelece critérios de acessibilidade em edificações, mobiliário, espaços e equipamentos urbanos.</li>
+            <li><strong>Convenção sobre os Direitos das Pessoas com Deficiência (ONU):</strong> Tratado internacional ratificado pelo Brasil, que define os direitos das pessoas com deficiência.</li>
+        </ul>
+    </section>
+
+    <section id="direitos-deficiencia">
+        <h2>Direitos das Pessoas com Deficiência</h2>
+        <p>As pessoas com deficiência possuem direitos garantidos por lei para garantir sua inclusão e participação plena na sociedade. Alguns dos principais direitos incluem:</p>
+        <ul>
+            <li>Direito à educação inclusiva, com adaptações necessárias para atender às necessidades específicas.</li>
+            <li>Direito ao trabalho, com condições justas e ajustes razoáveis no ambiente laboral.</li>
+            <li>Direito ao transporte acessível, incluindo ônibus, metrôs e veículos adaptados.</li>
+            <li>Direito à saúde, com atendimento adequado e acesso a tecnologias assistivas.</li>
+            <li>Direito à cultura, lazer e esporte, com infraestrutura adaptada.</li>
+        </ul>
+    </section>
+
+    <section id="luta-por-direito">
+        <h2>Como Lutar por Seus Direitos</h2>
+        <p>Se você ou alguém que conhece enfrenta dificuldades relacionadas à acessibilidade ou inclusão, existem recursos e passos que podem ajudar:</p>
+        <ul>
+            <li>Entre em contato com a <strong>Defensoria Pública</strong> ou o <strong>Ministério Público</strong> para denunciar violações de direitos.</li>
+            <li>Procure associações de apoio, como a <strong>Associação Brasileira de Deficientes Visuais</strong> ou <strong>Associação de Surdos</strong>, para orientação.</li>
+            <li>Utilize os canais de ouvidoria das prefeituras e governos estaduais para relatar problemas de acessibilidade.</li>
+            <li>Busque informações em portais oficiais, como o site do <strong>Governo Federal</strong> ou de entidades internacionais como a <strong>ONU</strong>.</li>
+        </ul>
+    </section>
+
+    <section id="recursos">
+        <h2>Recursos e Documentos Legais</h2>
+        <p>Confira alguns links úteis para aprofundar seu conhecimento sobre direitos e legislação de acessibilidade:</p>
+        <ul>
+            <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm" target="_blank">Texto completo da Lei Brasileira de Inclusão</a></li>
+            <li><a href="https://www.abntcatalogo.com.br/norma.aspx?ID=3936" target="_blank">ABNT NBR 9050: Acessibilidade a edificações</a></li>
+            <li><a href="https://www.un.org/esa/socdev/enable/documents/tccconvs.pdf" target="_blank">Convenção da ONU sobre os Direitos das Pessoas com Deficiência</a></li>
+    </section>
+
+    <section id="iniciativas">
+        <h2>Iniciativas e Programas Governamentais</h2>
+        <ul>
+            <li><strong>Viver Sem Limites:</strong> Programa federal voltado para a inclusão de pessoas com deficiência, com ações em áreas como saúde, educação e transporte.</li>
+            <li><strong>VLibras:</strong> Plataforma de tradução para Libras, disponível para sistemas operacionais e navegadores.</li>
+            <li><strong>eMAG:</strong> Modelo de Acessibilidade em Governo Eletrônico, que estabelece diretrizes para tornar sites governamentais acessíveis.</li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <p>Todos os direitos reservados. Desenvolvido por Felipe Carneiro Ribeiro</p>
+</footer>
+</html>
+
+
+<body>
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>
